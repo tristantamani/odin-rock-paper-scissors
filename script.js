@@ -67,6 +67,13 @@ function playGame() {
             playRound(humanSelection, computerSelection);
         }
     }
+
+    // Compare user and computer score and declare the winner
+    if (humanScore > computerScore) {
+        console.log("Your total score is " + humanScore + ".\nThe computer's score is " + computerScore + ".\nYou are the winner!");
+    } else if (humanScore < computerScore) {
+        console.log("Your total score is " + humanScore + ".\nThe computer's score is " + computerScore + ".\nYou are the loser!");
+    }
 }
 
 playGame();
