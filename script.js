@@ -1,18 +1,10 @@
 // Get input choice from computer
 function getComputerChoice() {
-    let choice = Math.floor(Math.random() * 3) + 1;
-    
-    switch(choice) {
-        case 1:
-            return "rock";
-            break;
-        case 2:
-            return "paper";
-            break;
-        case 3:
-            return "scissors";
-            break;
-    }
+    let computerChoice = Math.floor(Math.random() * 3) + 1;
+
+    return computerChoice === 1 ? "rock" :
+    computerChoice === 2 ? "paper" :
+    computerChoice === 3 ? "scissors" : undefined;
 }
 
 // Get input choice from user
