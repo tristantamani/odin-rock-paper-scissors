@@ -13,6 +13,8 @@ function getHumanChoice() {
 }
 
 // Initialize score variable for human and computer
+let humanScore = 0;
+let computerSCore = 0;
 
 // Write a function to play a single round
 
