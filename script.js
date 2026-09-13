@@ -25,8 +25,7 @@ function playGame() {
         if (humanChoice === "rock") {
             if (computerChoice === "paper") {
                 computerScore += 1;
-                return console.log(`Computer picked ${computerChoice}!
-                You lose! Paper beats rock.`);
+                return console.log("Computer picked " + computerChoice + "!\nYou lose! Paper beats rock.");
             } else if (computerChoice === "scissors") {
                 humanScore += 1;
                 return console.log("Computer picked " + computerChoice + "!\nYou win! Rock beats scissors.");
