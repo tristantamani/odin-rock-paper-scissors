@@ -14,8 +14,48 @@ function getHumanChoice() {
 
 // Initialize score variable for human and computer
 let humanScore = 0;
-let computerSCore = 0;
+let computerScore = 0;
 
 // Write a function to play a single round
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+
+    if (humanChoice === "rock") {
+        if (computerChoice === "paper") {
+            computerScore += 1;
+            return console.log("You lose! Paper beats rock.");
+        } else if (computerChoice === "scissors") {
+            humanScore += 1;
+            return console.log("You win! Rock beats scissors.");
+        } else {
+            return console.log("No one wins, it's a tie!");
+        }
+    } else if (humanChoice === "paper") {
+        if (computerChoice === "scissors") {
+            computerScore += 1;
+            return console.log("You lose! Scissors beats paper.");
+        } else if (computerChoice === "rock") {
+            humanScore += 1;
+            return console.log("You win! Paper beats rock.");
+        } else {
+            return console.log("No one wins, it's a tie!");
+        }
+    } else if (humanChoice === "scissors") {
+        if (computerChoice === "rock") {
+            computerScore += 1;
+            return console.log("You lose! Rock beats scissors.");
+        } else if (computerChoice === "paper") {
+            humanScore += 1;
+            return console.log("You win! Scissors beats paper.");
+        } else {
+            return console.log("No one wins, it's a tie!");
+        }
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
 // Write a function to play a single game of 5 rounds
