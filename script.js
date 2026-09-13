@@ -12,50 +12,61 @@ function getHumanChoice() {
     return humanChoice = prompt("Enter your choice (rock/paper/scissors): ", "");
 }
 
-// Initialize score variable for human and computer
-let humanScore = 0;
-let computerScore = 0;
+// Write a function to play a single game of 5 rounds
+function playGame() {
+    // Initialize score variable for human and computer
+    let humanScore = 0;
+    let computerScore = 0;
 
-// Write a function to play a single round
-function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
+    // Write a function to play a single round
+    function playRound(humanChoice, computerChoice) {
+        humanChoice = humanChoice.toLowerCase();
 
-    if (humanChoice === "rock") {
-        if (computerChoice === "paper") {
-            computerScore += 1;
-            return console.log("Computer picked " + computerChoice + "!\nYou lose! Paper beats rock.");
-        } else if (computerChoice === "scissors") {
-            humanScore += 1;
-            return console.log("Computer picked " + computerChoice + "!\nYou win! Rock beats scissors.");
-        } else {
-            return console.log("Computer picked " + computerChoice + "!\nNo one wins, it's a tie!");
+        if (humanChoice === "rock") {
+            if (computerChoice === "paper") {
+                computerScore += 1;
+                return console.log(`Computer picked ${computerChoice}!
+                You lose! Paper beats rock.`);
+            } else if (computerChoice === "scissors") {
+                humanScore += 1;
+                return console.log("Computer picked " + computerChoice + "!\nYou win! Rock beats scissors.");
+            } else {
+                return console.log("Computer picked " + computerChoice + "!\nNo one wins, it's a tie!");
+            }
+        } else if (humanChoice === "paper") {
+            if (computerChoice === "scissors") {
+                computerScore += 1;
+                return console.log("Computer picked " + computerChoice + "!\nYou lose! Scissors beats paper.");
+            } else if (computerChoice === "rock") {
+                humanScore += 1;
+                return console.log("Computer picked " + computerChoice + "!\nYou win! Paper beats rock.");
+            } else {
+                return console.log("Computer picked " + computerChoice + "!\nNo one wins, it's a tie!");
+            }
+        } else if (humanChoice === "scissors") {
+            if (computerChoice === "rock") {
+                computerScore += 1;
+                return console.log("Computer picked " + computerChoice + "!\nYou lose! Rock beats scissors.");
+            } else if (computerChoice === "paper") {
+                humanScore += 1;
+                return console.log("Computer picked " + computerChoice + "!\nYou win! Scissors beats paper.");
+            } else {
+                return console.log("Computer picked " + computerChoice + "!\nNo one wins, it's a tie!");
+            }
         }
-    } else if (humanChoice === "paper") {
-        if (computerChoice === "scissors") {
-            computerScore += 1;
-            return console.log("Computer picked " + computerChoice + "!\nYou lose! Scissors beats paper.");
-        } else if (computerChoice === "rock") {
-            humanScore += 1;
-            return console.log("Computer picked " + computerChoice + "!\nYou win! Paper beats rock.");
+    }
+
+    // Set a counter and loop the game 5 times
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        if (humanSelection === null){
+            i += 5
+            console.log("The game is cancelled!\nRefresh the page to play again.");
         } else {
-            return console.log("Computer picked " + computerChoice + "!\nNo one wins, it's a tie!");
-        }
-    } else if (humanChoice === "scissors") {
-        if (computerChoice === "rock") {
-            computerScore += 1;
-            return console.log("Computer picked " + computerChoice + "!\nYou lose! Rock beats scissors.");
-        } else if (computerChoice === "paper") {
-            humanScore += 1;
-            return console.log("Computer picked " + computerChoice + "!\nYou win! Scissors beats paper.");
-        } else {
-            return console.log("Computer picked " + computerChoice + "!\nNo one wins, it's a tie!");
+            playRound(humanSelection, computerSelection);
         }
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
-// Write a function to play a single game of 5 rounds
+playGame();
