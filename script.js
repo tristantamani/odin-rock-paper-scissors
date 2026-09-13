@@ -68,11 +68,13 @@ function playGame() {
         }
     }
 
-    // Compare user and computer score and declare the winner
+    // Compare user and computer score and declare the winner or tie
     if (humanScore > computerScore) {
         console.log("Your total score is " + humanScore + ".\nThe computer's score is " + computerScore + ".\nYou are the winner!");
     } else if (humanScore < computerScore) {
         console.log("Your total score is " + humanScore + ".\nThe computer's score is " + computerScore + ".\nYou are the loser!");
+    } else {
+        console.log("Your total score is " + humanScore + ".\nThe computer's score is " + computerScore + ".\nIt's a tie!");
     }
 }
 
