@@ -8,6 +8,9 @@ function getComputerChoice() {
 }
 
 // Get input choice from user
+function getHumanChoice() {
+    return humanChoice = prompt("Enter your choice (rock/paper/scissors): ", "");
+}
 
 // Initialize score variable for human and computer
 
