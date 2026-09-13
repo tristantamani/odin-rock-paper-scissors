@@ -59,8 +59,9 @@ function playGame() {
     for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
+
         if (humanSelection === null){
-            i += 5
+            i += 5;
             console.log("The game is cancelled!\nRefresh the page to play again.");
         } else {
             playRound(humanSelection, computerSelection);
@@ -75,4 +76,5 @@ function playGame() {
     }
 }
 
+// Invoke the function to play the entire game of 5 rounds
 playGame();
